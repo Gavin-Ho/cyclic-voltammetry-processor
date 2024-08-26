@@ -39,8 +39,10 @@ def main():
         potentials[cycle].append(potential)
         currents[cycle].append(current)
 
-    last_5_potentials = potentials[-5:]
-    last_5_currents = currents[-5:]
+    last_x = int(input("Average the last X scans: "))
+
+    last_5_potentials = potentials[-last_x:]
+    last_5_currents = currents[-last_x:]
     average_currents = []
 
     for idx, current in enumerate(last_5_currents[0]):
